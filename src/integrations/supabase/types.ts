@@ -14,13 +14,90 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      blocked_days: {
+        Row: {
+          created_at: string
+          day: string
+        }
+        Insert: {
+          created_at?: string
+          day: string
+        }
+        Update: {
+          created_at?: string
+          day?: string
+        }
+        Relationships: []
+      }
+      blocked_hours: {
+        Row: {
+          created_at: string
+          day: string
+          hour: number
+          id: string
+        }
+        Insert: {
+          created_at?: string
+          day: string
+          hour: number
+          id?: string
+        }
+        Update: {
+          created_at?: string
+          day?: string
+          hour?: number
+          id?: string
+        }
+        Relationships: []
+      }
+      bookings: {
+        Row: {
+          booking_date: string
+          created_at: string
+          full_name: string
+          hours: number[]
+          id: string
+          level: string
+          phone: string
+          price_per_hour: number
+          total_price: number
+        }
+        Insert: {
+          booking_date: string
+          created_at?: string
+          full_name: string
+          hours: number[]
+          id?: string
+          level: string
+          phone: string
+          price_per_hour?: number
+          total_price: number
+        }
+        Update: {
+          booking_date?: string
+          created_at?: string
+          full_name?: string
+          hours?: number[]
+          id?: string
+          level?: string
+          phone?: string
+          price_per_hour?: number
+          total_price?: number
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_admin: { Args: never; Returns: boolean }
+      taken_hours: {
+        Args: { d: string }
+        Returns: {
+          hour: number
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
