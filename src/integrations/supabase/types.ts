@@ -53,6 +53,7 @@ export type Database = {
       bookings: {
         Row: {
           booking_date: string
+          cancel_token: string
           created_at: string
           full_name: string
           hours: number[]
@@ -64,6 +65,7 @@ export type Database = {
         }
         Insert: {
           booking_date: string
+          cancel_token?: string
           created_at?: string
           full_name: string
           hours: number[]
@@ -75,6 +77,7 @@ export type Database = {
         }
         Update: {
           booking_date?: string
+          cancel_token?: string
           created_at?: string
           full_name?: string
           hours?: number[]
@@ -91,6 +94,20 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      cancel_own_booking: {
+        Args: { p_id: string; p_token: string }
+        Returns: boolean
+      }
+      get_booking_for_cancel: {
+        Args: { p_id: string; p_token: string }
+        Returns: {
+          booking_date: string
+          full_name: string
+          hours: number[]
+          level: string
+          total_price: number
+        }[]
+      }
       is_admin: { Args: never; Returns: boolean }
       taken_hours: {
         Args: { d: string }
