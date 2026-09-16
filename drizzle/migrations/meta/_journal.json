@@ -15,6 +15,13 @@
       "when": 1789571896109,
       "tag": "0001_add_booking_cancel_flow",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1789597396670,
+      "tag": "0002_add_booking_location_columns",
+      "breakpoints": true
     }
   ]
 }
