@@ -52,37 +52,46 @@ export type Database = {
       }
       bookings: {
         Row: {
+          address: string | null
           booking_date: string
           cancel_token: string
           created_at: string
           full_name: string
           hours: number[]
           id: string
+          latitude: number | null
           level: string
+          longitude: number | null
           phone: string
           price_per_hour: number
           total_price: number
         }
         Insert: {
+          address?: string | null
           booking_date: string
           cancel_token?: string
           created_at?: string
           full_name: string
           hours: number[]
           id?: string
+          latitude?: number | null
           level: string
+          longitude?: number | null
           phone: string
           price_per_hour?: number
           total_price: number
         }
         Update: {
+          address?: string | null
           booking_date?: string
           cancel_token?: string
           created_at?: string
           full_name?: string
           hours?: number[]
           id?: string
+          latitude?: number | null
           level?: string
+          longitude?: number | null
           phone?: string
           price_per_hour?: number
           total_price?: number
