@@ -22,6 +22,13 @@
       "when": 1789597396670,
       "tag": "0002_add_booking_location_columns",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1789668563291,
+      "tag": "0003_create_booking_function",
+      "breakpoints": true
     }
   ]
 }

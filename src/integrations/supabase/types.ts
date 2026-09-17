@@ -107,6 +107,24 @@ export type Database = {
         Args: { p_id: string; p_token: string }
         Returns: boolean
       }
+      create_booking: {
+        Args: {
+          p_address?: string
+          p_booking_date: string
+          p_full_name: string
+          p_hours: number[]
+          p_latitude?: number
+          p_level: string
+          p_longitude?: number
+          p_phone: string
+          p_price_per_hour: number
+          p_total_price: number
+        }
+        Returns: {
+          cancel_token: string
+          id: string
+        }[]
+      }
       get_booking_for_cancel: {
         Args: { p_id: string; p_token: string }
         Returns: {
